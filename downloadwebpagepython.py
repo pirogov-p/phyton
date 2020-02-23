@@ -1,5 +1,19 @@
 from urllib.request import urlopen
-html = urlopen("https://stepik.org/media/attachments/lesson/209717/1.html").read().decode('utf-8')
+html = urlopen("https://ru.wikipedia.org/wiki/Python").read().decode('utf-8')
 s = str(html)
-print ('c++ count = ', s.count('C++'))
+ans = []
+status = 0
+for c in s:
+    if c == '<':
+        status = 1
+    if c == '>':
+        status =0
+    elif status == 0:
+        ans.append(c)
+s = ''.join(ans)
+print (s)
+#print (s.count('C++'))
+
+'''print ('c++ count = ', s.count('C++'))
 print ('python count = ', s.count('Python'))
+'''
