@@ -1,10 +1,11 @@
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import requests
-import bs4
-import collections
-import re
-page = requests.get("https://stepik.org/media/attachments/lesson/209719/2.html")
-soup = BeautifulSoup(page.content, 'html.parser')
-for a in soup.find_all('a', href=True):
-    print (a['href'])
+import xlrd
+
+wb = xlrd.open_workbook('C:\\Users\\ppirogov\\Desktop\\Паше\\tab.xlsx')
+
+sheet = wb.sheet_by_index(0)
+vals = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
+#print (wb.sheet_by_index(0).row_values(0)[0])
+'''for a in vals:
+    print (a)'''
+a = print(statistics.median(data1))
+print (a)
