@@ -6,7 +6,7 @@ html = urlopen("https://stepik.org/media/attachments/lesson/209719/2.html").read
 s = str(html)
 pos = s.find('<a href=')
 while pos != -1:
-    posquote = s.find('""', pos + 9)
+    posquote = s.find('"', pos + 9)
     href = s[pos + 9:posquote]
     print(href)
     pos = s.find('<a href=', pos + 1)
