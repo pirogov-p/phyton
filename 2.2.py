@@ -1,20 +1,12 @@
 import xlrd
-from statistics import median , mean
-
+from statistics import median
 c = []
-d = []
+d=[0,0,0,0,0,0,0]
 wb = xlrd.open_workbook('C:\\Users\\ppirogov\\Desktop\\Паше\\salaries.xlsx')
-
 sheet = wb.sheet_by_index(0)
 vals = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
-#print (wb.sheet_by_index(0).row_values(0)[0])
-col_number = sheet.ncols
-max = 0
-number = 0
-max2 = 0
-number2 = 0
-a = 1
-b = 1
+max, number,max2,number2 = 0,0,0,0
+a,b = 1,1
 while a < 9:
     c.append(median(sheet.row_values(a)[1:]))
     if max < median(sheet.row_values(a)[1:]):
@@ -23,18 +15,20 @@ while a < 9:
     a+=1
 a = 1
 b = 1
-print (sheet.row_values(number)[0])
+print (sheet.row_values(number)[0], end = ' ')
+#print (vals)
 while a < 9:
     b = 1
-    max2 = 0
-    number2 = 0
     while b < 8:
-        if max2 < sheet.row_values(a)[b]:
-            max2 = sheet.row_values(a)[b]
-            number2 = b
+        d[b-1]+=vals[a][b]
         b+=1
-        #print (max2, end = ' ')
-    #print ()
-    print (sheet.row_values(a)[0], end = ' ')
-    print (sheet.row_values(0)[number2])
     a+=1
+i=0
+p=0
+max3 = 0
+while i < 7:
+    if d[i] > max3:
+        max3=d[i]
+        p = i
+    i+=1
+print (sheet.row_values(0)[p+1])
