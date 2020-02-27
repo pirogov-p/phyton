@@ -30,5 +30,4 @@ for i in range(int(day)):
                     k2 = k2 + a[r][1] * vals2[e][2] / 100
                     k3 = k3 + a[r][2] * vals2[e][2] / 100
                     k4 = k4 + a[r][3] * vals2[e][2] / 100
-
     print(int(k1), int(k2), int(k3), int(k4))
