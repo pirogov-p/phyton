@@ -1,6 +1,5 @@
 import xmltodict,requests
 
-#a = requests.get('https://stepik.org/media/attachments/lesson/245571/map1.osm')
 
 f=open(r'C:\\Users\\pirog\\Desktop\\map1.osm',"wb") #открываем файл для записи, в режиме wb
 ufr = requests.get("https://stepik.org/media/attachments/lesson/245571/map1.osm") #делаем запрос
