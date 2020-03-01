@@ -16,5 +16,16 @@ for node in a['osm']['node']:
         elif isinstance(tags, dict):
             if (tags['@v']) == 'fuel':
                 fuel += 1
+
+for way in a['osm']['way']:
+    if 'tag' in way:
+        tags = way['tag']
+        if isinstance(tags, list):
+            for tag in tags:
+                if tag['@k'] == 'amenity' and tag['@v'] == 'fuel':
+                    fuel+=1
+        elif isinstance(tags, dict):
+            if (tags['@v']) == 'fuel':
+                fuel += 1
 print(fuel)
 
