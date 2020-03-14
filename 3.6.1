@@ -1,9 +1,0 @@
-import requests
-url = 'https://stepic.org/media/attachments/course67/3.6.2/050.txt'
-r = requests.get(str.strip(url))
-sum = 0
-
-#print (r.text)
-sum = r.text.splitlines()
-
-print(len(sum))
