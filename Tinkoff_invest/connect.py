@@ -11,4 +11,4 @@ instr_list = bonds.payload.instruments + etfs.payload.instruments + stocks.paylo
 
 # instr_list[:3]
 instr = client.market.market_search_by_ticker_get('BTI')
-print(instr)
+print(etfs)
